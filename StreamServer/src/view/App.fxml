@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="635.0" prefWidth="1024.0" xmlns="http://javafx.com/javafx/8.0.112" xmlns:fx="http://javafx.com/fxml/1" fx:controller="view.Interface">
+   <children>
+      <Label fx:id="centerText" alignment="BASELINE_CENTER" contentDisplay="CENTER" prefHeight="635.0" prefWidth="1447.0" text="Connect to the IP on the port shown below through the App" textAlignment="CENTER" textFill="#5e5e5e" wrapText="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <font>
+            <Font name="Calibri Italic" size="32.0" />
+         </font>
+      </Label>
+      <Label alignment="CENTER" contentDisplay="CENTER" layoutX="405.0" layoutY="157.0" text="Start the Stream" textFill="#6b6b6b">
+         <font>
+            <Font name="Calibri Italic" size="32.0" />
+         </font>
+      </Label>
+      <Label fx:id="textIP" layoutX="383.0" layoutY="449.0" text="IP: ??" textFill="#515151">
+         <font>
+            <Font name="Calibri Italic" size="20.0" />
+         </font>
+      </Label>
+      <Label fx:id="textPort" layoutX="374.0" layoutY="499.0" text="Port: ??" textFill="#464646">
+         <font>
+            <Font name="Calibri Italic" size="20.0" />
+         </font>
+      </Label>
+   </children>
+</AnchorPane>

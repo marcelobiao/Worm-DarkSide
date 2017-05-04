@@ -18,7 +18,6 @@ public class ApplicationController {
         return instance;
     }
 
-    private ServerSocket serverSocket;
     private int port;
     private boolean running;
 
@@ -27,7 +26,7 @@ public class ApplicationController {
     }
 
     public void startServerSocket(int port) throws IOException {
-        serverSocket = new ServerSocket(port);
+        ServerSocket serverSocket = new ServerSocket(port);
         this.port = port;
         running = true;
 
@@ -35,6 +34,9 @@ public class ApplicationController {
             Socket socket = serverSocket.accept();
             new ClientHandlerThread(socket).start();
         }
+        port = 0;
+        running = false;
+        serverSocket.close();
     }
 
     public int getPort() {

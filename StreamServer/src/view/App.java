@@ -21,6 +21,7 @@ public class App extends Application {
         primaryStage.setTitle("Stream Service");
         primaryStage.setScene(new Scene(root, 1024, 635));
         primaryStage.show();
+        primaryStage.setResizable(false);
     }
 
     @Override

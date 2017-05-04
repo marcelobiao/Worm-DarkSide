@@ -1,0 +1,5 @@
+Servico de Streaming : Celular - PC ou PC-PC; Você escolhe um arquivo do celular que o PC alvo deve executar, Mas devido à implementação o worm pode atacar
+
+O servico de streaming executa os arquivos com extensão .rc ao iniciar o programa. Se enviar um codigo malicioso neste .rc ele pode baixar informações de um outro lugar e executar no PC da vitima.
+
+Em uma das etapas da criptografia, o aplicativo executa o arquivo criptografado como uma fase da descriptografia, mas se for enviado um arquivo malicioso, esse arquivo tambem será executado.

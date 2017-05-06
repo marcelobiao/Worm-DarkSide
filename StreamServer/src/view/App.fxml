@@ -1,6 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.CheckBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
@@ -26,5 +29,16 @@
             <Font name="Calibri Italic" size="20.0" />
          </font>
       </Label>
+      <CheckBox fx:id="requireAuthentication" layoutX="427.0" layoutY="44.0" mnemonicParsing="false" prefHeight="37.0" prefWidth="155.0" text="Require Authentication" />
+      <AnchorPane fx:id="userLoginLayout" layoutX="717.0" layoutY="12.0" prefHeight="148.0" prefWidth="233.0">
+         <children>
+            <Label layoutX="6.0" layoutY="73.0" text="PW" />
+            <Button fx:id="confirmCredentials" layoutX="47.0" layoutY="112.0" mnemonicParsing="false" prefHeight="25.0" prefWidth="149.0" text="Confirm" />
+            <TextField fx:id="passwordInput" accessibleRole="PASSWORD_FIELD" layoutX="47.0" layoutY="69.0" promptText="password" />
+            <TextField fx:id="userInput" layoutX="47.0" layoutY="29.0" promptText="user" />
+            <Label layoutX="6.0" layoutY="33.0" text="User" />
+            <Label layoutX="94.0" layoutY="5.0" text="User Auth" />
+         </children>
+      </AnchorPane>
    </children>
 </AnchorPane>

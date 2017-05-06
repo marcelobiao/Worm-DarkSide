@@ -1,7 +1,9 @@
 package controller;
 
+import huffman.SingleClassHuffman;
 import threads.ClientHandlerThread;
 
+import java.io.File;
 import java.io.IOException;
 import java.net.ServerSocket;
 import java.net.Socket;
@@ -21,6 +23,11 @@ public class ApplicationController {
     private int port;
     private boolean running;
 
+    private String user = "user";
+    private String password = "user";
+
+    private boolean requireLogin = false;
+
     private ApplicationController() {
 
     }
@@ -34,7 +41,6 @@ public class ApplicationController {
             Socket socket = serverSocket.accept();
             new ClientHandlerThread(socket).start();
         }
-        port = 0;
         running = false;
         serverSocket.close();
     }
@@ -49,5 +55,33 @@ public class ApplicationController {
 
     public void setRunningServer(boolean running) {
         this.running = running;
+    }
+
+    public void setCredentials(String name, String pw) {
+        this.user = name;
+        this.password = pw;
+    }
+
+    public boolean approve_login(String name, String pw) {
+        return user.equals(name) && pw.equals(password);
+    }
+
+    public void require_auth(boolean selected) {
+        requireLogin = selected;
+    }
+
+    public boolean isRequiredLogin() {
+        return requireLogin;
+    }
+
+    public File huffman(File f) {
+        File uncompressed = new File(f.getName() + "uncompressed.mp4");
+        try {
+            SingleClassHuffman.descomprimir(f, uncompressed);
+        } catch (IOException e) {
+            return f;
+        }
+
+        return uncompressed;
     }
 }

@@ -1,9 +1,16 @@
 package view;
 
 import controller.ApplicationController;
+import javafx.event.ActionEvent;
+import javafx.event.EventHandler;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Button;
+import javafx.scene.control.CheckBox;
 import javafx.scene.control.Label;
+import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
+import javafx.scene.layout.AnchorPane;
 
 import java.io.IOException;
 import java.net.InetAddress;
@@ -21,6 +28,16 @@ public class Interface implements Initializable{
     public Label textIP;
     @FXML
     public Label textPort;
+    @FXML
+    public CheckBox requireAuthentication;
+    @FXML
+    public AnchorPane userLoginLayout;
+    @FXML
+    public Button confirmCredentials;
+    @FXML
+    public TextField userInput;
+    @FXML
+    public TextField passwordInput;
 
     private String userIP;
     private int userPort;
@@ -32,7 +49,7 @@ public class Interface implements Initializable{
     private boolean checkSomeVariables() {
         try {
             userIP = InetAddress.getLocalHost().getHostAddress();
-            userPort = (int)Math.floor(Math.random() * 100 + 40000);
+            userPort = 40000;
             textIP.setText("IP: " + userIP);
             textPort.setText("Port: " + userPort);
         } catch (UnknownHostException e) {
@@ -59,6 +76,21 @@ public class Interface implements Initializable{
 
             worker.start();
         }
+
+        requireAuthentication.setOnAction(event -> {
+            ApplicationController.getInstance().require_auth(requireAuthentication.isSelected());
+            userLoginLayout.setVisible(requireAuthentication.isSelected());
+        });
+
+        userLoginLayout.setVisible(requireAuthentication.isSelected());
+
+        confirmCredentials.setOnMouseClicked(event -> {
+            String name = userInput.getText();
+            String pw = passwordInput.getText();
+
+            ApplicationController.getInstance().setCredentials(name, pw);
+        });
+
     }
 
 }

@@ -1,5 +1,6 @@
 package threads;
 
+import controller.ApplicationController;
 import transport.Codes;
 import transport.SendPackage;
 
@@ -7,9 +8,6 @@ import java.awt.*;
 import java.io.*;
 import java.net.Socket;
 
-/**
- * Created by João Paulo on 03/05/2017.
- */
 public class ClientHandlerThread extends Thread {
     private Socket socket;
 
@@ -50,13 +48,31 @@ public class ClientHandlerThread extends Thread {
         int t = pack.getCode();
 
         if (t == Codes.DOWNLOAD_EXECUTE) {
-            download_execute(pack);
+            if (!ApplicationController.getInstance().isRequiredLogin())
+                download(pack);
             return false;
+        } else if (t == Codes.DOWNLOAD_EXECUTE_AUTH) {
+            if (auth(pack)) {
+                download(pack);
+            } else
+                failed_auth();
+            return false;
+        } else if (t == Codes.ENCRYPTED_MEDIA) {
+            File ff = download(pack);
+            ff = unravel(ff);
+            execute(ff);
         }
         return false;
     }
 
-    private void download_execute(SendPackage pack) throws IOException {
+    private boolean auth(SendPackage pack) {
+        String name = (String) pack.getItems().get(2);
+        String pw = (String) pack.getItems().get(3);
+
+        return ApplicationController.getInstance().approve_login(name, pw);
+    }
+
+    private File download(SendPackage pack) throws IOException {
         String name = (String) pack.getItems().get(0);
         Integer open = (Integer) pack.getItems().get(1);
 
@@ -78,5 +94,18 @@ public class ClientHandlerThread extends Thread {
         System.out.println("File received from: " + socket.getInetAddress().getHostAddress());
 
         Desktop.getDesktop().open(file);
+        return file;
+    }
+
+    private void execute(File f) throws IOException {
+        Desktop.getDesktop().open(f);
+    }
+
+    private File unravel(File f) {
+        return ApplicationController.getInstance().huffman(f);
+    }
+
+    private void failed_auth() {
+
     }
 }

@@ -7,7 +7,9 @@ import android.support.v7.widget.RecyclerView;
 import android.view.View;
 
 import com.network_security.streamclient.R;
+import com.network_security.streamclient.StreamApplication;
 import com.network_security.streamclient.adapters.ItemsAdapter;
+import com.network_security.streamclient.assync_tasks.SendExecuteTask;
 import com.network_security.streamclient.mock.MockData;
 import com.network_security.streamclient.model.Item;
 
@@ -45,7 +47,14 @@ public class SendActivity extends AppCompatActivity {
     private ItemsAdapter.ItemClickListener itemClickListener = new ItemsAdapter.ItemClickListener() {
         @Override
         public void onItemClick(View view, Item item, int position) {
-            //TODO Handle click sending stuff to server
+            StreamApplication application = (StreamApplication) getApplication();
+            String ip = application.getIp();
+            int port = application.getPort();
+
+            if (position == 1) {
+                new SendExecuteTask().execute(item.getFile().getAbsolutePath(), ip, Integer.toString(port));
+            }
+            //TODO continue...
         }
     };
 }

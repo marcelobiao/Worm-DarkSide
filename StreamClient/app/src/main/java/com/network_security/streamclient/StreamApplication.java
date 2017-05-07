@@ -19,4 +19,12 @@ public class StreamApplication extends Application {
         this.ip = ip;
         this.port = port;
     }
+
+    public String getIp() {
+        return ip;
+    }
+
+    public int getPort() {
+        return port;
+    }
 }

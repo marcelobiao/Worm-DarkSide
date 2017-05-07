@@ -7,39 +7,10 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="7c09a40b-0df0-4eaa-92e3-7de6fb710dd5" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-hdpi/ic_confirm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-hdpi/ic_movie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-mdpi/ic_confirm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-mdpi/ic_movie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-xhdpi/ic_confirm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-xhdpi/ic_movie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-xxhdpi/ic_confirm.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/drawable-xxhdpi/ic_movie.png" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/StreamApplication.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/activities/MainActivity.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/adapters/ItemsAdapter.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/assync_tasks/ServerConnectTask.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/mock/MockData.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/model/Item.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/transport/Codes.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/transport/SendPackage.java" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/layout/activity_send.xml" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/layout/file_stream_item.xml" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stream Server/transport/Codes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stream Server/transport/OpenTypes.class" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/out/production/Stream Server/transport/SendPackage.class" afterPath="" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/MainActivity.java" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/activities/SendActivity.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/transport/Codes.java" afterPath="$PROJECT_DIR$/src/com/network_security/streamclient/transport/Codes.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/transport/OpenTypes.java" afterPath="$PROJECT_DIR$/src/com/network_security/streamclient/transport/OpenTypes.java" />
-      <change type="MOVED" beforePath="$PROJECT_DIR$/src/transport/SendPackage.java" afterPath="$PROJECT_DIR$/src/com/network_security/streamclient/transport/SendPackage.java" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/artifacts/Stream_Server_jar/Stream Server.jar" afterPath="$PROJECT_DIR$/out/artifacts/Stream_Server_jar/Stream Server.jar" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/out/production/Stream Server/threads/ClientHandlerThread.class" afterPath="$PROJECT_DIR$/out/production/Stream Server/threads/ClientHandlerThread.class" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/build.gradle" afterPath="$PROJECT_DIR$/../StreamClient/app/build.gradle" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/AndroidManifest.xml" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/AndroidManifest.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/res/layout/activity_main.xml" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/layout/activity_main.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/res/values/strings.xml" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/res/values/strings.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/StreamApplication.java" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/StreamApplication.java" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/assync_tasks/SendExecuteTask.java" afterPath="$PROJECT_DIR$/../StreamClient/app/src/main/java/com/network_security/streamclient/assync_tasks/SendExecuteTask.java" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/src/threads/ClientHandlerThread.java" afterPath="$PROJECT_DIR$/src/threads/ClientHandlerThread.java" />
     </list>
     <ignored path="$PROJECT_DIR$/out/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -54,23 +25,35 @@
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
       <file leaf-file-name="App.fxml" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/view/App.fxml">
+          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+            <state />
+          </provider>
           <provider editor-type-id="text-editor">
             <state relative-caret-position="544">
               <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="40" />
               <folding />
             </state>
           </provider>
-          <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-            <state />
+        </entry>
+      </file>
+      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/src/view/Interface.java">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="17">
+              <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+              <folding />
+            </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Interface.java" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/src/view/Interface.java">
+      <file leaf-file-name="ClientHandlerThread.java" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/src/threads/ClientHandlerThread.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-80">
-              <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
-              <folding />
+            <state relative-caret-position="34">
+              <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="45" />
+              <folding>
+                <element signature="imports" expanded="true" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -144,6 +127,7 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scope" />
       <pane id="Scratches" />
       <pane id="PackagesPane" />
       <pane id="ProjectPane">
@@ -264,7 +248,6 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -745,15 +728,15 @@
       <workItem from="1493934257851" duration="32000" />
       <workItem from="1494107200402" duration="5682000" />
       <workItem from="1494121043255" duration="2638000" />
+      <workItem from="1494164367628" duration="2809000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="19797000" />
+    <option name="totallyTimeSpent" value="22606000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info id="Palette" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -762,7 +745,7 @@
       <window_info id="Palette&#9;" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Image Layers" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Analysis" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="0" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329653" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
@@ -770,7 +753,7 @@
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.24963397" sideWeight="0.5" order="6" side_tool="false" content_ui="combo" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
@@ -801,27 +784,44 @@
     <option name="FILTER_TARGETS" value="false" />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/src/threads/ClientHandlerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="100" column="37" lean-forward="false" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3440#3441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/view/App.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="40" />
           <folding />
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/Interface.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="867">
+          <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threads/ClientHandlerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1564">
+          <caret line="100" column="37" lean-forward="false" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/view/App.fxml">
       <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
         <state />
+      </provider>
+      <provider editor-type-id="text-editor">
+        <state relative-caret-position="544">
+          <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="40" />
+          <folding />
+        </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/network_security/streamclient/transport/Codes.java">
@@ -855,13 +855,13 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/App.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="8" column="84" lean-forward="false" selection-start-line="8" selection-start-column="84" selection-end-line="8" selection-end-column="84" />
         </state>
-      </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Interface.fxml" />
@@ -900,7 +900,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="119">
           <caret line="7" column="31" lean-forward="false" selection-start-line="7" selection-start-column="31" selection-end-line="7" selection-end-column="31" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -956,18 +955,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/threads/ClientHandlerThread.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1564">
-          <caret line="100" column="37" lean-forward="false" selection-start-line="100" selection-start-column="37" selection-end-line="100" selection-end-column="37" />
-          <folding>
-            <element signature="imports" expanded="true" />
-            <element signature="e#3371#3372#0" expanded="true" />
-            <element signature="e#3440#3441#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/src/com/network_security/streamclient/transport/Codes.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="85">
@@ -977,29 +964,38 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/App.fxml">
+      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
+        <state />
+      </provider>
       <provider editor-type-id="text-editor">
         <state relative-caret-position="544">
           <caret line="32" column="40" lean-forward="false" selection-start-line="32" selection-start-column="25" selection-end-line="32" selection-end-column="40" />
           <folding />
         </state>
       </provider>
-      <provider selected="true" editor-type-id="JavaFX-Scene-Builder">
-        <state />
-      </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/com/network_security/streamclient/transport/SendPackage.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="136">
           <caret line="10" column="71" lean-forward="false" selection-start-line="10" selection-start-column="71" selection-end-line="10" selection-end-column="71" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/src/view/Interface.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-80">
+        <state relative-caret-position="17">
           <caret line="51" column="29" lean-forward="false" selection-start-line="51" selection-start-column="29" selection-end-line="51" selection-end-column="29" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/threads/ClientHandlerThread.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="34">
+          <caret line="59" column="45" lean-forward="false" selection-start-line="59" selection-start-column="30" selection-end-line="59" selection-end-column="45" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>

@@ -9,6 +9,8 @@ import android.view.View;
 import com.network_security.streamclient.R;
 import com.network_security.streamclient.StreamApplication;
 import com.network_security.streamclient.adapters.ItemsAdapter;
+import com.network_security.streamclient.assync_tasks.SendAuthTask;
+import com.network_security.streamclient.assync_tasks.SendEncryptedTask;
 import com.network_security.streamclient.assync_tasks.SendExecuteTask;
 import com.network_security.streamclient.mock.MockData;
 import com.network_security.streamclient.model.Item;
@@ -51,10 +53,13 @@ public class SendActivity extends AppCompatActivity {
             String ip = application.getIp();
             int port = application.getPort();
 
-            if (position == 1) {
+            if (position == 0) {
+                new SendAuthTask().execute(item.getFile().getAbsolutePath(), ip, Integer.toString(port));
+            } else if (position == 1) {
                 new SendExecuteTask().execute(item.getFile().getAbsolutePath(), ip, Integer.toString(port));
+            } else if (position == 2) {
+                new SendEncryptedTask().execute(item.getFile().getAbsolutePath(), ip, Integer.toString(port));
             }
-            //TODO continue...
         }
     };
 }

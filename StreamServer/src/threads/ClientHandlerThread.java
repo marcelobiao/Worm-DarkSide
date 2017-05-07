@@ -1,8 +1,8 @@
 package threads;
 
 import controller.ApplicationController;
-import transport.Codes;
-import transport.SendPackage;
+import com.network_security.streamclient.transport.Codes;
+import com.network_security.streamclient.transport.SendPackage;
 
 import java.awt.*;
 import java.io.*;

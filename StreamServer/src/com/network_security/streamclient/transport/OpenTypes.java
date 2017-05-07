@@ -1,4 +1,4 @@
-package transport;
+package com.network_security.streamclient.transport;
 
 /**
  * Created by João Paulo on 03/05/2017.

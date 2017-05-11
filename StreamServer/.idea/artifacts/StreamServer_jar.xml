@@ -1,6 +1,6 @@
 <component name="ArtifactManager">
-  <artifact type="jar" name="Stream Server:jar">
-    <output-path>$PROJECT_DIR$/out/artifacts/Stream_Server_jar</output-path>
+  <artifact type="jar" name="StreamServer:jar">
+    <output-path>$PROJECT_DIR$/out/artifacts/StreamServer_jar</output-path>
     <root id="archive" name="Stream Server.jar">
       <element id="module-output" name="Stream Server" />
     </root>

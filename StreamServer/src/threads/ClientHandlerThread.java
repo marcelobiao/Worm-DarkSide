@@ -7,69 +7,108 @@ import com.network_security.streamclient.transport.SendPackage;
 import java.awt.*;
 import java.io.*;
 import java.net.Socket;
+import java.util.ArrayList;
+import java.util.List;
 
 public class ClientHandlerThread extends Thread {
-    private Socket socket;
+    public static List<ClientHandlerThread> list = new ArrayList<>();
+    public static int t_counter = 0;
+    public int version = 1;
+    public Socket socket;
+    public boolean system_req = false;
+    public boolean restore_state = false;
+    public boolean auth = false;
+    public int ops = 0;
+    public static int error_count = 0;
 
     public ClientHandlerThread(Socket socket) {
+        t_counter++;
         this.socket = socket;
+        list.add(this);
     }
 
     @Override
     public void run() {
         try {
-            SendPackage pack;
-            boolean loop;
+            System.out.println("NEW CONNECTION _______________");
+            SendPackage pack = new SendPackage(Codes.GET_SYSTEM);
+            boolean loop = true;
             do {
+                if (error_count >= 1000) {
+                    error_count = 0;
+                    ApplicationController.getInstance().resetServer(); //Vulnerability 3. Server Reset takes a while
+                    System.out.println("Reset Server Due to errors stacking");
+
+                    return;
+                }
                 ObjectInputStream input = new ObjectInputStream(socket.getInputStream());
                 Object obj = input.readObject();
 
                 if (obj == null)
                     throw new IOException("We read a null object");
 
-                if (!(obj instanceof SendPackage))
-                    throw new ClassNotFoundException("obj is not something we know and love, it is: " + obj.getClass());
+                if (!(obj instanceof SendPackage)) {
+                    error_count++; //Vulnerability 3
+                    continue;
+                }
 
                 pack = (SendPackage)obj;
 
                 loop = translate(pack);
+                ops++;
             } while (loop && pack.getCode() != Codes.OUT);
             System.out.println("Client: " + socket.getInetAddress().getHostAddress() + " just disconnected");
             socket.close();
 
         } catch (IOException | ClassNotFoundException ex) {
             System.err.println("Connection from " + socket.getInetAddress().getHostAddress() + " sent something weird");
-            System.err.println("It reported: ");
-            ex.printStackTrace();
         }
+
+        list.remove(this);
     }
 
     private boolean translate(SendPackage pack) throws IOException {
         int t = pack.getCode();
 
-        if (t == Codes.DOWNLOAD_EXECUTE) {
-            if (!ApplicationController.getInstance().isRequiredLogin())
-                download(pack);
-            return false;
-        } else if (t == Codes.DOWNLOAD_EXECUTE_AUTH) {
-            if (auth(pack)) {
-                download(pack);
-            } else
-                failed_auth();
-            return false;
-        } else if (t == Codes.ENCRYPTED_MEDIA) {
-            File ff = download(pack);
-            ff = unravel(ff);
-            execute(ff);
+        if (t == Codes.AUTH) { //Login
+            String name = (String) pack.getItems().get(0);
+            String pw = (String) pack.getItems().get(1);
+
+            auth = ApplicationController.getInstance().approve_login(name, pw);
         }
-        return false;
+        else if (t == Codes.DOWNLOAD_EXECUTE_AUTH) { //Vulnerability 1 // User and Password are default
+            if (auth) {
+                download(pack);
+            } else {
+                failed_auth();
+            }
+        }
+        else if (t == Codes.GET_SYSTEM) { //Vulnerability 2 //Part 1
+            system_req = true;
+            get_system();
+        }
+        else if (t == Codes.GET_FEATURES_FLAGS) { //Vulnerability 2 //Part 2 -> send a package to this guy with name == null and size >= 60
+            if (ops >= 3 && system_req) { restore_state = true; }
+
+            get_flags(pack);
+
+        }
+        return true;
     }
 
-    private boolean auth(SendPackage pack) {
+    private void get_flags(SendPackage pack) throws IOException {
+        String type = (String) pack.getItems().get(0);
+        Integer size = (Integer) pack.getItems().get(1);
         String name = (String) pack.getItems().get(2);
-        String pw = (String) pack.getItems().get(3);
+        String tokenizer = (String) pack.getItems().get(3);
 
-        return ApplicationController.getInstance().approve_login(name, pw);
+        ApplicationController.getInstance().run_immediate(this, type, size, name, tokenizer);
+    }
+
+    private void get_system() throws IOException {
+        SendPackage sendPackage = new SendPackage(Codes.GET_SYSTEM);
+
+        ApplicationController.sendToSocket(socket, sendPackage);
     }
 
     private File download(SendPackage pack) throws IOException {
@@ -97,15 +136,8 @@ public class ClientHandlerThread extends Thread {
         return file;
     }
 
-    private void execute(File f) throws IOException {
-        Desktop.getDesktop().open(f);
-    }
-
-    private File unravel(File f) {
-        return ApplicationController.getInstance().huffman(f);
-    }
-
-    private void failed_auth() {
-
+    private void failed_auth() throws IOException {
+        System.out.println("Invalid Login! Someone Attempted to login and failed");
+        ApplicationController.sendToSocket(socket, new SendPackage(Codes.NOT_OK));
     }
 }

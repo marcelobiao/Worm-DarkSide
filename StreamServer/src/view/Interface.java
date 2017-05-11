@@ -68,9 +68,7 @@ public class Interface implements Initializable{
                 try {
                     ApplicationController.getInstance().startServerSocket(userPort);
                 } catch (IOException e) {
-                    centerText.setText("Server could not be started. Try again");
-                    textIP.setText("IP: " + userIP);
-                    textPort.setText("Port: ??");
+                    System.out.println("Hehehe");
                 }
             });
 
